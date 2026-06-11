@@ -4,9 +4,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Trik memaksa Vite mengabaikan file data kuis/glossary yang hilang
     rollupOptions: {
-      external: ['./data/quiz', './data/glossary', './types'],
+      // Trik memaksa Vite mengabaikan logo png dan data kuis yang belum diunggah
+      external: [
+        './assets/images/tab_bot_logo_1781152066922.png',
+        './data/quiz',
+        './data/glossary'
+      ]
     }
   }
 })
